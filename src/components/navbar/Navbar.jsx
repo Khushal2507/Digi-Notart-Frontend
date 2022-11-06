@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import logo from "../../logo.svg";
 import "./navbar.css";
+import { useNavigate } from "react-router-dom";
 // import "../../index.css";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    sessionStorage.removeItem("userid");
+    navigate("/login");
+  };
 
   return (
     <div className="gpt3__navbar">
@@ -32,8 +39,10 @@ const Navbar = () => {
         </div>
       </div>
       <div className="gpt3__navbar-sign">
-        <p>Sign in</p>
-        <button type="button">Sign up</button>
+        {/* <p>Sign in</p> */}
+        <button type="button" onClick={logoutHandler}>
+          Log Out
+        </button>
       </div>
       <div className="gpt3__navbar-menu">
         {toggleMenu ? (

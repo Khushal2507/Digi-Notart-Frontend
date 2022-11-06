@@ -60,7 +60,7 @@
 }
 
 .cardFile img {
-  height: 200px;
+  height: 100px;
 }
 
 .gpt3__whatgpt3-feature {
@@ -82,7 +82,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   margin: 4rem 0 2rem;
 }
 
@@ -108,7 +107,7 @@
     flex-wrap: wrap;
     flex-direction: row; */
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
   margin-top: 2rem;
 }
 

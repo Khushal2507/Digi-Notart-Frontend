@@ -1,0 +1,91 @@
+.userList {
+  background-image: url(backgroumd.jpg);
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-blend-mode: multiply;
+  padding: 20px;
+  flex: 4;
+  z-index: 1000;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+}
+
+.tableStyle {
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  opacity: 0.4;
+}
+
+td {
+  font-size: 0.9rem;
+  margin: 5px;
+  padding: 10px;
+  color: #555;
+}
+
+.content-row {
+  display: flex;
+  flex-direction: row;
+  /* flex: 1fr 1fr 3fr; */
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  opacity: 0.4;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.content-row .first {
+  flex: 1;
+}
+
+.content-row .second {
+  flex: 1;
+}
+
+.content-row .third {
+  flex: 2;
+}
+
+.noDocuments {
+  text-align: center;
+  /* background-color: white; */
+}
+
+.userListUser {
+  display: flex;
+  /* align-items: center; */
+}
+
+.userListImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.userListEdit {
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: #3bb077;
+  color: white;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.userListDelete {
+  color: red;
+  cursor: pointer;
+}
+
+div thead th {
+  padding: 30px;
+}

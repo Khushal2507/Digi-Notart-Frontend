@@ -9,13 +9,15 @@ const WhatGPT3 = (props) => {
   const userid = sessionStorage.getItem("userid");
   const [files, setFiles] = useState([]);
   const fetchFiles = async () => {
-    const res = await axios
-      .get("http://localhost:3001/api/getFiles/" + userid)
-      .catch((err) => {
-        console.log(err);
-      });
+    if (userid != null) {
+      const res = await axios
+        .get("http://localhost:3001/api/getFiles/" + userid)
+        .catch((err) => {
+          console.log(err);
+        });
 
-    setFiles(res.data);
+      setFiles(res.data);
+    }
   };
 
   useEffect(() => {
@@ -33,11 +35,13 @@ const WhatGPT3 = (props) => {
       </div>
       <div className="gpt3__whatgpt3-heading">
         <h1 className="gradient__text">Your Uploaded Documets</h1>
-        <p>Access your Own Uploaded Documents which are yet to be</p>
+        <p style={{ color: "white" }}>
+          Access your Own Uploaded Documents which are yet to be Verified
+        </p>
       </div>
       <div className="gpt3__whatgpt3-container">
         {files.map((file) => (
-          <a href={file.fileData} target="_blank">
+          <a href={file.fileData} target="_blank" key={file._id}>
             <div className="cardFile">
               <img src={uploadImage}></img>
               <h3>{file.name}</h3>

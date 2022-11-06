@@ -1,9 +1,9 @@
 import axios from "axios";
-import { stringify } from "postcss";
+
 import React, { useContext, useRef, useState } from "react";
 // import user from "../../../Server/models/user";
 import "./Login.css";
-import image from "./right_img.jpg";
+import image from "./rightimgback.jpg";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 // import user from "../../../Server/models/user";
@@ -18,6 +18,7 @@ const Login = () => {
   const usernameSignupRef = useRef();
   const emailSignupRef = useRef();
   const passwordSignupRef = useRef();
+
   const loginHandler = (event) => {
     event.preventDefault();
     // console.log(emailRef.current.value);
@@ -28,12 +29,14 @@ const Login = () => {
     axios
       .post("http://localhost:3001/user/login", formData)
       .then((res) => {
-        if (res.data.message == true) {
+        if (res.data.message == true && res.data.type == "user") {
           ctx.userLogged = res.data.user;
           console.log(res.data);
           sessionStorage.setItem("userid", res.data.userid);
           console.log(ctx.userLogged);
           navigate("/");
+        } else if (res.data.message == true && res.data.type == "admin") {
+          navigate("/admin");
         }
       })
       .catch((err) => {
@@ -100,6 +103,12 @@ const Login = () => {
                     required
                   />
                 </div>
+                {/* <div className="dropdown">
+                  <select value={type} onChange={typeHandler} ref={typeLogin}>
+                    <option name="user">User</option>
+                    <option name="admin">Admin</option>
+                  </select>
+                </div> */}
                 {/* <div className="wrongDetails none">Invalid Credentials</div> */}
                 <div className="forgot text">
                   <a href="#">Forgot Password</a>
@@ -139,6 +148,7 @@ const Login = () => {
                     required
                   />
                 </div>
+
                 <div className="input-box">
                   <i className="fa fa-lock"></i>
                   <input
@@ -148,6 +158,7 @@ const Login = () => {
                     required
                   />
                 </div>
+
                 <div className="button submit">
                   <input type="submit" value="Create Account" />
                 </div>
