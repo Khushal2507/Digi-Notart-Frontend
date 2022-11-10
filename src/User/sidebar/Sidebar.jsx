@@ -9,9 +9,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import UploadModular from "../uploadModular/UploadModular.js";
+import img from "./meet.png";
 
 export default function Sidebar() {
   const [userData, setUserData] = useState([]);
+  const [click, setClick] = useState(false);
 
   const fetchUser = async () => {
     const res = await axios
@@ -21,6 +24,10 @@ export default function Sidebar() {
       });
 
     setUserData(res.data);
+  };
+
+  const uploadHandler = () => {
+    setClick((current) => !current);
   };
 
   useEffect(() => {
@@ -48,22 +55,24 @@ export default function Sidebar() {
         </div>
 
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Staff</h3>
+          <h3 className="sidebarTitle">Admin</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem">
-              {/* <WorkOutline className="sidebarIcon" /> */}
-              Manage
-            </li>
-            <li className="sidebarListItem">
-              {/* <Timeline className="sidebarIcon" /> */}
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              {/* <Report className="sidebarIcon" /> */}
-              Reports
-            </li>
+            <Link to="/admin/upload" className="link">
+              <li className="sidebarListItem" onClick={uploadHandler}>
+                {/* <WorkOutline className="sidebarIcon" /> */}
+                Upload
+              </li>
+            </Link>
           </ul>
         </div>
+
+        <footer>
+          <a href="https://meet.google.com/landing?authuser=1" target="_blank">
+            <img src={img}></img>
+          </a>
+        </footer>
+
+        {click && <UploadModular />}
       </div>
     </div>
   );

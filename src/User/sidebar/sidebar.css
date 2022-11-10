@@ -38,7 +38,20 @@
   background-color: rgb(240, 240, 255);
 }
 
-.sidebarIcon{
-    margin-right: 5px;
-    font-size: 20px !important;
+.sidebarIcon {
+  margin-right: 5px;
+  font-size: 20px !important;
+}
+
+footer {
+  position: absolute;
+  bottom: 50px;
+  left: 85px;
+  border: 1px solid black;
+  padding: 10px;
+  /* background-color: ; */
+}
+
+footer a {
+  /* padding: 50px 20px; */
 }

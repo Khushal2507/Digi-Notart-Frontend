@@ -9,9 +9,13 @@ import { useEffect } from "react";
 
 const UserList = (props) => {
   const [files, setFiles] = useState([]);
+  const [upload, setUpload] = useState(false);
+  let render = "";
 
   const fetchUserfile = async () => {
-    if (props.userid) {
+    if (props.userid == "upload") {
+      setUpload(true);
+    } else if (props.userid) {
       const res = await axios
         .get("http://localhost:3001/user/" + props.userid)
 

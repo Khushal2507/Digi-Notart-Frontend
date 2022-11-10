@@ -18,24 +18,25 @@ const Navbar = () => {
     <div className="gpt3__navbar">
       <div className="gpt3__navbar-links">
         <div className="gpt3__navbar-links_logo">
-          <img src={logo} />
+          {/* <img src={logo} /> */}
+          <h2>Digi-Notary</h2>
         </div>
         <div className="gpt3__navbar-links_container">
           <p>
             <a href="#home">Home</a>
           </p>
           <p>
-            <a href="#wgpt3">Apply to be Notary</a>
+            <a href="#wgpt3">Your Documents</a>
           </p>
           <p>
-            <a href="#possibility">Open AI</a>
+            <a href="#possibility">About Us</a>
           </p>
-          <p>
+          {/* <p>
             <a href="#features">Case Studies</a>
           </p>
           <p>
             <a href="#blog">Library</a>
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="gpt3__navbar-sign">

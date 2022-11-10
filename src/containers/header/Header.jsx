@@ -6,8 +6,11 @@ import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 // import ChatBot from "../../components/chatBot/ChatBot";
 import SupportEngine from "../../components/SupportEngine";
+import ChatBot from "../../components/chatBot/ChatBot";
 
 const Header = () => {
+  const socket = useContext(AuthContext);
+
   const ctx = useContext(AuthContext);
   return (
     <div className="gpt3__header section__padding" id="home">
@@ -36,7 +39,7 @@ const Header = () => {
 
       <div className="gpt3__header-image">
         <img src={ai} />
-        {/* <SupportEngine /> */}
+        <ChatBot />
       </div>
     </div>
   );

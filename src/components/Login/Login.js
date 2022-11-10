@@ -36,6 +36,8 @@ const Login = () => {
           console.log(ctx.userLogged);
           navigate("/");
         } else if (res.data.message == true && res.data.type == "admin") {
+          ctx.userLogged = res.data.user;
+          sessionStorage.setItem("userid", res.data.userid);
           navigate("/admin");
         }
       })

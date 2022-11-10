@@ -23,7 +23,12 @@ const OverlayModular = (props) => {
       .post("http://localhost:3001/api/uploadFile", formData, {})
       .then((res) => {
         // console.log("Hello");
+        alert("Your Document is Uploaded!");
         console.log(res);
+      })
+      .catch((err) => {
+        alert("Something went wrong!");
+        console.log(err);
       });
     props.fileHandler();
   };

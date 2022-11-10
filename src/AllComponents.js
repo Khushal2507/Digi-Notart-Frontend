@@ -37,10 +37,10 @@ const AllComponents = () => {
       </div>
       <Brand />
       <WhatGPT3 uploadFile={uploadFile} />
-      <Features />
+      {/* <Features /> */}
       <Possibility />
-      <CTA />
-      <Blog />
+      {/* <CTA /> */}
+      {/* <Blog /> */}
       <Footer />
     </div>
   );
