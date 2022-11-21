@@ -50,6 +50,24 @@ const WhatGPT3 = (props) => {
     console.log(blockchainfiles);
   };
 
+  const deleteHandler = async (fileid) => {
+    console.log(fileid);
+    const answer = window.confirm("Delete File?");
+    if (answer) {
+      await axios
+        .delete(`http://localhost:3001/api/deleteFiles/${fileid}/${userid}`)
+        .then((res) => {
+          fetchFiles();
+          alert("Successfully Deleted");
+        })
+        .catch((err) => {
+          alert("Error Occured while Deleting");
+        });
+    } else {
+      alert("File not Deleted");
+    }
+  };
+
   return (
     <div className="gpt3__whatgpt3 section__margin" id="wgpt3">
       <div className="gpt3__whatgpt3-feature">
@@ -63,25 +81,16 @@ const WhatGPT3 = (props) => {
       </div>
       <div className="gpt3__whatgpt3-container">
         {files.map((file) => (
-          <a href={file.fileData} target="_blank" key={file._id}>
-            <div className="cardFile">
-              <img src={uploadImage}></img>
-              <h3>{file.name}</h3>
-            </div>
-          </a>
+          <div className="flex_container">
+            <a href={file.fileData} target="_blank" key={file._id}>
+              <div className="cardFile">
+                <img src={uploadImage}></img>
+                <h3>{file.name}</h3>
+              </div>
+            </a>
+            <button onClick={() => deleteHandler(file._id)}>Delete</button>
+          </div>
         ))}
-        {/* <Feature
-          title="Education"
-          text="At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b"
-        />
-        <Feature
-          title="Education"
-          text="At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b"
-        />
-        <Feature
-          title="Education"
-          text="At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put impossible own apartments b"
-        /> */}
       </div>
     </div>
   );
