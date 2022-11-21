@@ -83,7 +83,7 @@ const Login = () => {
             className="existingUser"
           >
             <div className="login-form">
-              <div className="title">SignIn</div>
+              <div className="title">Sign-In</div>
               <div className="input-boxes">
                 <div className="input-box">
                   <i className="fa fa-envelope"></i>
