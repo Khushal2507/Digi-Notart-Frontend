@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="gpt3__navbar-links">
         <div className="gpt3__navbar-links_logo">
           {/* <img src={logo} /> */}
-          <h2>Digi-Notary</h2>
+          <h2>DigiNotary</h2>
         </div>
         <div className="gpt3__navbar-links_container">
           <p>
