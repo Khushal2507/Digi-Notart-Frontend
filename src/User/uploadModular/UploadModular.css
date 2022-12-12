@@ -1,4 +1,4 @@
-.background {
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,15 +12,14 @@
   text-align: center;
 }
 
-.overlay {
-  /* background: black; */
+.uploadContainer {
   position: fixed;
   /* background: rgba(247, 245, 245, 0.75); */
   background: white;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   height: 40%;
   width: 40%;
   z-index: 100;
@@ -28,22 +27,28 @@
   background-color: #edf2f4;
 }
 
-.overlay form {
-  border: 1px solid;
-  padding: 10px;
+.uploadContainer h1 {
+  padding: 20px 0 40px 0;
+  font-size: 1.5rem;
 }
 
-.overlay input {
-  font-size: 1rem;
-  color: #0096c7;
-}
-input::file-selector-button {
-  color: #0096c7;
+.uploadContainer form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
-.overlay button {
-  margin-top: 10px;
-  padding: 5px;
-  border: 1px solid;
-  border-radius: 5px;
+label {
+  padding-right: 20px;
+}
+
+.description {
+  padding-bottom: 20px;
+}
+
+button {
+  border: 1px solid black;
+  padding: 20px;
 }

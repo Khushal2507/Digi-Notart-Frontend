@@ -13,12 +13,16 @@
 }
 
 .gpt3__navbar-links_logo {
+  display: flex;
+  flex-direction: row;
   margin-right: 2rem;
 }
 
-.gpt3__navbar-links_logo img {
-  width: 62.56px;
-  height: 16.02px;
+.gpt3__navbar-links_logo h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  /* text-decoration: underline; */
 }
 
 .gpt3__navbar-links_container {

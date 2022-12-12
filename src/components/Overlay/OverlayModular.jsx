@@ -19,13 +19,22 @@ const OverlayModular = (props) => {
     formData.append("fileData", fileUpload);
     formData.append("user", sessionStorage.getItem("userid"));
     formData.append("fileName", fileName.current.value);
-    axios
-      .post("http://localhost:3001/api/uploadFile", formData, {})
-      .then((res) => {
-        // console.log("Hello");
-        console.log(res);
-      });
-    props.fileHandler();
+    if (fileUpload) {
+      axios
+        .post("http://localhost:3001/api/uploadFile", formData, {})
+        .then((res) => {
+          // console.log("Hello");
+          alert("Your Document is Uploaded!");
+          console.log(res);
+        })
+        .catch((err) => {
+          alert("Something went wrong!");
+          console.log(err);
+        });
+      props.fileHandler();
+    } else {
+      alert("Please Select a File");
+    }
   };
 
   const submitFile = () => {};

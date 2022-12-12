@@ -1,5 +1,5 @@
-import React from 'react';
-import './feature.css';
+import React from "react";
+import "./feature.css";
 
 const Feature = ({ title, text }) => (
   <div className="gpt3__features-container__feature">
@@ -8,7 +8,7 @@ const Feature = ({ title, text }) => (
       <h1>{title}</h1>
     </div>
     <div className="gpt3__features-container_feature-text">
-      <p>{text}</p>
+      <p style={{ color: "#71E5FF" }}>{text}</p>
     </div>
   </div>
 );

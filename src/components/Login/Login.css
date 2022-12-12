@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   /* background-color: #7d2ae8; */
-  background-image: url(image2.jfif);
+  background-image: url(blockchain.jpg);
   background-color: rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-blend-mode: multiply;
@@ -35,7 +35,7 @@ input[type="checkbox"] {
 .container {
   min-width: 950px;
   position: relative;
-  width: 100%;
+  /* width: 100%; */
   background-color: #fff;
   padding: 40px 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
@@ -133,8 +133,11 @@ input[type="checkbox"] {
 }
 .container .form-content {
   /* height: 500px; */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   /* align-items: center; */
   /* justify-content: space-evenly; */
 }
@@ -154,7 +157,7 @@ input[type="checkbox"] {
 .form-content form .text a {
   text-decoration: none;
   cursor: pointer;
-  color: #5b13b9;
+  color: #05005f;
 }
 .form-content form .text a:hover {
   text-decoration: underline;
@@ -178,7 +181,7 @@ input[type="checkbox"] {
   bottom: 0;
   height: 3px;
   width: 22px;
-  background-color: #7d2ae8;
+  background-color: #05005f;
 }
 
 .form-content form .input-boxes {
@@ -208,17 +211,17 @@ input[type="checkbox"] {
 }
 .form-content .input-box input:focus {
   /* border-bottom: 2px solid rgba(0, 0, 0, 0.2); */
-  border-color: #7d2ae8;
+  border-color: #05005f;
 }
 
 .form-content .input-box i {
-  color: #7d2ae8;
+  color: #05005f;
   font-size: 15px;
 }
 
 .form-content form .input-boxes .submit input {
   width: 100%;
-  background-color: #7d2ae8;
+  background-color: #05005f;
   padding: 10px;
   margin: 20px 0;
   border: none;
@@ -230,10 +233,14 @@ input[type="checkbox"] {
 }
 
 .form-content form .input-boxes .submit input:hover {
-  background-color: #5b13b9;
+  background-color: #0c049e;
 }
 
 .form-content form .login-text,
 .form-content form .sign-up-text {
   text-align: center;
+}
+
+.dropdown {
+  padding: 20px;
 }
